@@ -1,0 +1,33 @@
+api  integration...
+open exchange api..
+get app id 
+copy it
+
+
+
+curl --request GET \
+     --url 'https://openexchangerates.org/api/currencies.json?prettyprint=false&show_alternative=false&show_inactive=false' \
+     --header 'accept: application/json'
+
+
+create a keys file keys.dart file 'storing the app keys as string format..
+create fetch function/file..
+ 1-importing the package https-dart as http..
+ 
+2---
+ 🔄 Purpose:
+The code defines a data model (`RatesModel`) for handling currency exchange rate data from an API like OpenExchangeRates.
+ 📦 What It Does:
+1. **Parses JSON into a Dart object**:  
+   `ratesModelFromJson(String str)` converts a JSON string into a `RatesModel` object.
+
+2. **Converts Dart object to JSON**:  
+   `ratesModelToJson(RatesModel data)` turns a `RatesModel` object into a JSON string.
+
+3. **Defines a model class** (`RatesModel`) with:
+   - `disclaimer`, `license`, `timestamp`, `base`: Basic metadata from the API.
+   - `rates`: A map of currency codes (e.g., `"USD"`, `"EUR"`) to their exchange rates (`double` values).
+
+4. **Provides `fromJson` and `toJson` methods**:
+   - `fromJson`: Reads a JSON map and constructs a `RatesModel`.
+   - `toJson`: Converts the `RatesModel` object back into a JSON map.
